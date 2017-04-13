@@ -1,8 +1,8 @@
 local super = builder
 local builder = super()
 
-builder.DEVKITARM = os.getenv('DEVKITARM') or error('$DEVKITARM not set')
-builder.DEVKITPRO = os.getenv('DEVKITPRO') or error('$DEVKITPRO not set')
+builder.DEVKITARM = DEVKITARM or os.getenv('DEVKITARM') or error('$DEVKITARM not set')
+builder.DEVKITPRO = DEVKITPRO or os.getenv('DEVKITPRO') or error('$DEVKITPRO not set')
 builder.toolchain_prefix = builder.DEVKITARM..'/bin/arm-none-eabi-'
 
 function builder:get_compiler()
