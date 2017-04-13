@@ -1,7 +1,7 @@
 #!/usr/bin/env luajit
 
 local start_time = os.time()
-BUILD_RULES_FILENAME = 'how2build.lua'
+BUILD_RULES_FILENAME = BUILD_RULES_FILENAME or 'how2build.lua'
 
 function os.capture(cmd)
   local f = assert(io.popen(cmd, 'r'))
